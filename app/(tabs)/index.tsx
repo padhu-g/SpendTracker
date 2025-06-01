@@ -314,7 +314,7 @@ const ExpenseCard = memo(function ExpenseCard(props: ExpenseCardProps) {
       <View style={styles.inputContainer}>
         <Text style={styles.inputLabel}>Description</Text>
         <TextInput
-          ref={descriptionRef}
+          ref={descriptionRef as React.LegacyRef<TextInput> | undefined}
           value={description}
           onChangeText={onDescriptionChange}
           style={[styles.input, styles.inputHeight]}
@@ -337,7 +337,7 @@ const ExpenseCard = memo(function ExpenseCard(props: ExpenseCardProps) {
         <View style={styles.amountInputContainer}>
           <Text style={styles.currencySymbol}>₹</Text>
           <TextInput
-            ref={amountRef}
+            ref={amountRef as React.LegacyRef<TextInput> | undefined}
             value={amount}
             onChangeText={onAmountChange}
             style={[styles.input, styles.inputHeight, { flex: 1, borderWidth: 0 }]}
